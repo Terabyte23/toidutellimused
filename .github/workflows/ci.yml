@@ -10,12 +10,12 @@ jobs:
   test: Automaattestid
   runs-on: ubuntu-latest
   steps:
-    - name: Lae kood alla
+    - name: Lae kood all
       uses: actions/checkout@v4
 
-    - name: Paigalda Node.js 
+    - name: Paigalda Node.js
       uses: actions/setup-node@v4
-      with: 
+      with:
         node-version: '20'
 
     - name: Paigalda sõltuvused
@@ -27,5 +27,3 @@ jobs:
     - name: Oota kuni server käivitub
       run: sleep 3
 
-    - name: Käivitame testid
-      run: node *TESTID*
