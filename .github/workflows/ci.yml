@@ -18,11 +18,10 @@ jobs:
 
       - name: Teata adukast deployst
         run: 
-          echo: "Kõik testid läbisid!"
-          echo: "Rakendes on valmis"
-          echo: "Keskkond: prodution"
-          echo: "Commit: ${{ github.sha }}"
-
+          echo "Kõik testid läbisid!"
+          echo "Rakendes on valmis"
+          echo "Keskkond: prodution"
+          echo "Commit: ${{ github.sha }}"
   build:
     name: Docker build kontroll
     runs-on: ubuntu-latest
