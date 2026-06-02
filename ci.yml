@@ -1,0 +1,32 @@
+name: CI pipeline
+ 
+on:
+  push:
+    branches: { master }
+ 
+  pull_request:
+    branches: { master }
+ 
+jobs:
+  test: automaattestid
+  runs-on: ubuntu-latest
+  steps:
+    - name: lae kood alla
+    uses: actions/checkout@v4
+ 
+    - name: Paigalda Node.js
+    uses: actions/setup-node@v4
+    with:
+      node-version: '20'
+ 
+    - name: paigalda sõltuvused
+      run: npm install
+ 
+    - name: käivitame rakenduse
+      run: node src/server.js &
+ 
+    - name: Oota serveri käivitumist
+      run: sleep 3
+ 
+    - name: kaivitame testid
+      run: node src/test.js
