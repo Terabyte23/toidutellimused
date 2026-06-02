@@ -2,13 +2,23 @@ name: CI Pipeline
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [master]
   pull_request:
-    branches: [ master, main ]
+    branches: [master]
 
 jobs:
   build:
     name: Docker build kontroll
+    runs-on: ubuntu-latest
+    steps:
+      -name: Lae kood alla
+      uses: actions/checkout@v4
+
+      -name: Ehita dev image
+      run: docker compose --profile dev build
+
+      -name: Ehita prod image
+      run: docker compose --profile prod build
 
   name: Koodi kontroll
   runs-on: ubuntu-latest
