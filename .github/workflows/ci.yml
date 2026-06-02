@@ -7,6 +7,9 @@ on:
     branches: [ master, main ]
 
 jobs:
+  build:
+    name: Docker build kontroll
+
   name: Koodi kontroll
   runs-on: ubuntu-latest
   steps:
