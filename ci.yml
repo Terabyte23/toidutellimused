@@ -6,9 +6,9 @@ name: CI Pipeline
 >>>>>>> ab650946eab44a5f6bc59b2eb9ee6c21ad361046
 on:
   push:
-    branches: [ master ]
+    branches: [ master, main ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, main ]
 <<<<<<< HEAD
 
 jobs:
